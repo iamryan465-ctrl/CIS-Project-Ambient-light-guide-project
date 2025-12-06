@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Browse architecture project images on Glow Daily. Explore the most inspiring photography, drawings and plans from the world's best architectural projects." />
+  <meta name="keywords" content="architecture gallery, project images, architectural photography, building designs, architecture photos, design gallery" />
+  <meta name="author" content="Glow Daily" />
+  <title>Gallery - Architecture Images | Glow Daily</title>
+  <link rel="stylesheet" href="stylesheet/Project page style.css" />
+  <link rel="stylesheet" href="stylesheet/Sub-page style.css" />
+</head>
+<body>
+
+<nav class="nav-bar">
+    <div class="search-container">
+        <span class="icon">🔍</span>
+        <input type="search" placeholder="Search Image Tags" aria-label="Search Image Tags"/>
+    </div>
+<b class="nav-links">        
+    <a href="index.html">Home</a> &nbsp;
+    <a href="projects.html">Projects</a> &nbsp;
+    <a href="galleryhall.html">Gallery</a> &nbsp;
+    <a href="guide.html">Guide</a> &nbsp;
+    <a href="about.html">About</a> &nbsp;
+  </b>
+</nav>
+
+<main class="gallery-page">
+  <div class="gallery-inner">
+    <header class="gallery-header">
+  <h2>Architecture Project Images <span class="muted">| <span id="results-count">0</span> results</span></h2>
+      <p class="lead">Images recently published on GlowDaily. The most inspiring photography, drawings and plans from the world's best projects.</p>
+    </header>
+
+    <div class="filters" role="navigation" aria-label="image filters">
+      <a href="#" class="filter-chip">Image Type</a>
+      <a href="#" class="filter-chip">Project Category</a>
+      <a href="#" class="filter-chip">Space</a>
+      <a href="#" class="filter-chip">Building Element</a>
+      <a href="#" class="filter-chip">Materials</a>
+      <a href="#" class="filter-chip">Country/Region</a>
+    </div>
+
+    <section class="gallery-grid" aria-label="image results">
+      <!-- Featured thumbnail -->
+      <a class="thumb" href="projects.html" style="background-image:url('Image folder/Big picture/King Power Mahanakhon building in Bangkok.jpg'); background-size:cover; background-position:center;" aria-label="Open King Power Mahanakhon"></a>
+      <a class="thumb" href="project-daylighting.html" style="background-image:url('Image folder/Big picture/bed daylighting.jpg'); background-size:cover; background-position:center;" aria-label="Open Bedroom Daylighting Project"></a>
+      <a class="thumb" href="project-basilica.html" style="background-image:url('Image folder/Big picture/saint-peters-basilica.jpg'); background-size:cover; background-position:center;" aria-label="Open Saint Peter's Basilica"></a>
+    </section>
+  </div>
+</main>
+
+<footer>
+    <p>&copy; 2025 Glow Daily</p>
+    <p><a href="mailto:contact@glowdaily.com">contact@glowdaily.com</a></p>
+</footer>
+
+<script>
+  // Count thumbnails and update the results count in the header.
+  document.addEventListener('DOMContentLoaded', function () {
+    const thumbs = document.querySelectorAll('.gallery-grid .thumb');
+    const count = thumbs.length;
+    const el = document.getElementById('results-count');
+    if (el) {
+      // format number with commas
+      el.textContent = count.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+    }
+  });
+</script>
+
+</body>
+</html>

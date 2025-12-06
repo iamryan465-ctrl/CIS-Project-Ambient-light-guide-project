@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="stylesheet/Project page style.css" />
+<link rel="stylesheet" href="stylesheet/Sub-page style.css" />
+<body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Glow Daily - Your go-to architectural platform showcasing innovative designs, inspiring photography, and architecture from the world's best projects." />
+  <meta name="keywords" content="architecture, design, architectural projects, building design, contemporary architecture, Glow Daily" />
+  <meta name="author" content="Glow Daily" />
+  <title>Glow Daily - Architecture & Design Platform</title>
+</head>
+
+<header>
+  <h1>Glow Daily</h1>
+</header>
+
+<nav class="nav-bar">
+  <b class="nav-links">
+    <a href="index.html">Home</a> &nbsp;
+    <a href="projects.html">Projects</a> &nbsp;
+    <a href="galleryhall.html">Gallery</a> &nbsp;
+    <a href="guide.html">Guide</a> &nbsp;
+    <a href="about.html">About</a> &nbsp;
+  </b>
+</nav>
+
+<div class="search-container">
+  <span class="icon">🔍</span>
+  <input type="search" placeholder="Search GlowDaily" aria-label="Search GlowDaily"/>
+</div>
+
+<!-- Featured project preview on home page -->
+<main class="home-feature-wrap">
+  <article class="home-feature">
+    <div class="home-feature-left">
+      <a href="projects.html" class="feature-link">
+        <img src="Image folder/Big picture/King Power Mahanakhon building in Bangkok.jpg" alt="Featured project" />
+      </a>
+      <div class="thumb-row">
+        <a href="projects.html"><img src="Image folder/Sub picture/about-1.png" alt="thumb1" /></a>
+        <a href="projects.html"><img src="Image folder/Sub picture/glasstray.jpg" alt="thumb2" /></a>
+        <a href="projects.html"><img src="Image folder/Sub picture/outdoor360.jpg" alt="thumb3" /></a>
+      </div>
+    </div>
+
+    <div class="home-feature-right">
+      <h2>King Power Mahanakhon Building / Bangkok</h2>
+      <div class="muted">about 3 hours ago</div>
+      <p class="home-excerpt">Text description provided by the architects. The regeneration of the Linear Park of Doca, located in Belém do Pará, arises as a strategic urban intervention that combines infrastructure, landscape, and memory to reconnect the city to its waters through the enhancement of public spaces.</p>
+      <div class="feature-actions">
+        <a class="save-btn" href="#">Save this project</a>
+        <a class="read-more" href="projects.html">Read more »</a>
+      </div>
+    </div>
+  </article>
+
+  <!-- Guide article preview on home page -->
+  <article class="home-feature">
+    <div class="home-feature-left">
+      <a href="guide.html" class="feature-link">
+        <img src="Image folder/Big picture/triangle.jpg" alt="Guide: Ambient Light" />
+      </a>
+      <div class="thumb-row">
+        <a href="guide.html"><img src="Image folder/Sub picture/about-1.png" alt="thumb1" /></a>
+        <a href="guide.html"><img src="Image folder/Sub picture/glasstray.jpg" alt="thumb2" /></a>
+        <a href="guide.html"><img src="Image folder/Sub picture/outdoor360.jpg" alt="thumb3" /></a>
+      </div>
+    </div>
+
+    <div class="home-feature-right">
+      <h2>What Is Ambient Light? Here's How to Use It in Your Home</h2>
+      <div class="muted">Updated on 05/23/24</div>
+      <p class="home-excerpt">When you walk into a room that feels warm and well-illuminated thanks to the light from lamps and other sources, you're enjoying the glow of ambient light. This is the light that you get from well-placed light fixtures throughout a space, creating an even lightscape throughout the room.</p>
+      <div class="feature-actions">
+        <a class="save-btn" href="#">Save this article</a>
+        <a class="read-more" href="guide.html">Read more »</a>
+      </div>
+    </div>
+  </article>
+</main>
+
+<br />
+<footer>
+  <p>&copy; 2025 My Lighting Showcase</p>
+  <p><a href="mailto:contact@glowdaily.com">contact@glowdaily.com</a></p>
+</footer>
+
+<script>
+  // Search functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.querySelector('input[type="search"]');
+    
+    // Page mapping with keywords
+    const pageMap = {
+      'projects.html': ['king power', 'mahanakhon', 'bangkok', 'building', 'project', 'architecture'],
+      'guide.html': ['ambient', 'light', 'lighting', 'guide', 'home', 'how to'],
+      'about.html': ['about', 'voice', 'architecture', 'glow daily', 'vision'],
+      'galleryhall.html': ['gallery', 'images', 'photos', 'pictures']
+    };
+
+    searchInput.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        const query = this.value.toLowerCase().trim();
+        
+        if (!query) return;
+        
+        // Find matching page
+        for (const [page, keywords] of Object.entries(pageMap)) {
+          if (keywords.some(keyword => query.includes(keyword) || keyword.includes(query))) {
+            window.location.href = page;
+            return;
+          }
+        }
+        
+        // Default to gallery if no match
+        window.location.href = 'galleryhall.html';
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
